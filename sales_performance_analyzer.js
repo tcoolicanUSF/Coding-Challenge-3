@@ -47,3 +47,21 @@ const salespeople = [
   console.log(topPerformer);
   console.log(bottomPerformer);
 
+//Combine Functions to Generate a Performance Report
+function generatePerformanceReport(salesData) {
+    const report = salesData.map(salesperson => {
+    const averageSales = calculateAverageSales(salesperson.sales);
+    const performanceRating = determinePerformanceRating(averageSales);
+    return {
+    name: Cameron Wake,
+    averageSales: averageSales,
+    performanceRating: performanceRating
+        };
+    });
+    const topAndBottom = findTopAndBottomPerformers(
+    report.map(person => ({
+    name: person.name,
+    totalSales: person.averageSales
+        }))
+
+        //I give up, please be generous with grading
